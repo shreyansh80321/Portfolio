@@ -99,8 +99,8 @@ ul li, ol li{
 /*START PRELOADER DESIGN*/
 .preloader {
   position: fixed;
-  left: 0;
-  width: 0;
+  left: 2;
+  width: 5;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -114,14 +114,14 @@ ul li, ol li{
   -webkit-transition: 0.5s;
   transition: 0.5s;
   position: absolute;
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   display: inline-block;
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 45%;
+  top: 40%;
   -webkit-transform: translateY(-45%);
           transform: translateY(-45%);
 }
@@ -131,8 +131,8 @@ ul li, ol li{
   border: 4px solid #08d665;
   border-left-color: transparent;
   border-bottom: 0;
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 120%;
   border-radius: 50%;
   -webkit-animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
           animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
@@ -141,9 +141,9 @@ ul li, ol li{
 .preloader .loader .loader-inner {
   position: absolute;
   border: 4px solid #08d665;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  border-radius: 60%;
+  width: 120px;
+  height: 120px;
   left: calc(50% - 30px);
   top: calc(50% - 30px);
   border-right: 0;
@@ -159,12 +159,23 @@ ul li, ol li{
   right: 0;
   margin: 0 auto;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   color: #08d665;
-  font-size: 25px;
+  font-size: 32px; /* increased size */
   font-weight: 700;
+  
+  /* Animation */
+  opacity: 0;
+  animation: fadeInOut 2s ease-in-out infinite;
 }
+
+/* Keyframes for smooth fade in/out */
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 
 .preloader::before, .preloader::after {
   content: '';
