@@ -504,10 +504,10 @@ main {
 
 .skills-stage-copy {
   position: absolute;
-  top: 0;
+  top: -20%;
   left: 0;
   max-width: 20rem;
-  z-index: 2;
+  z-index: 20;
 }
 
 .skills-stage-label {
@@ -528,11 +528,11 @@ main {
   line-height: 1.2;
 }
 
-.skills-stage-center {
-  position: relative;
-  min-height: 44rem;
-  z-index: 2;
-  overflow: visible;
+.skills-stage-center{
+    position:relative;
+    min-height:44rem;
+    z-index:2;
+    overflow:visible;
 }
 
 .skills-globe-zone {
@@ -646,19 +646,19 @@ main {
 }
 
 .orbit-skill {
-  position: absolute;
-  left: 38%;
-  top: 46%;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 0.78rem 0.95rem;
-  border-radius: 999px;
-  border: 1px solid rgba(89, 98, 112, 0.14);
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 14px 28px rgba(74, 88, 110, 0.12);
-  backdrop-filter: blur(14px);
-  z-index: 3;
+  position:absolute;
+  left:38%;
+  top:46%;
+  display:inline-flex;
+  align-items:center;
+  gap:.7rem;
+  padding:.78rem .95rem;
+  border-radius:999px;
+  border:1px solid rgba(89,98,112,.14);
+  background:rgba(255,255,255,.82);
+  box-shadow:0 14px 28px rgba(74,88,110,.12);
+  backdrop-filter:blur(14px);
+  z-index:3;
 }
 
 .orbit-skill strong {
@@ -1146,4 +1146,99 @@ main {
     max-width: none;
     margin-top: 1rem;
   }
+}
+
+
+.loading-screen{
+
+position:fixed;
+inset:0;
+
+z-index:999999;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:#f7f8fb;
+
+overflow:hidden;
+}
+
+.loading-screen canvas{
+
+opacity:.45;
+}
+
+.loading-content{
+
+position:relative;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+z-index:2;
+}
+
+.loading-logo{
+
+width:120px;
+height:120px;
+
+border-radius:50%;
+
+border:1.5px solid rgba(90,90,90,.12);
+
+border-top:1.5px solid #5d8cff;
+
+border-right:1.5px solid #8a7bff;
+
+margin-bottom:35px;
+
+box-shadow:
+0 0 45px rgba(92,130,255,.15);
+}
+
+.loading-content h1{
+
+font-size:70px;
+
+font-weight:700;
+
+letter-spacing:8px;
+
+margin:0;
+
+color:#1c1c1c;
+}
+
+.loading-content p{
+
+margin-top:10px;
+
+font-size:15px;
+
+letter-spacing:10px;
+
+color:#777;
+}
+
+.loading-line{
+
+margin-top:40px;
+
+height:3px;
+
+border-radius:999px;
+
+background:linear-gradient(
+90deg,
+#4f7cff,
+#9277ff,
+#58c6ff
+);
+
+box-shadow:
+0 0 15px rgba(93,140,255,.4);
 }

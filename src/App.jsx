@@ -350,12 +350,22 @@ function App() {
     message: "",
   });
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setRoleIndex((current) => (current + 1) % roles.length);
     }, 2200);
 
     return () => window.clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -467,7 +477,56 @@ function App() {
       });
     }
   };
+ if (loading) {
+   return (
+     <motion.div
+       className="loading-screen"
+       initial={{ opacity: 1 }}
+       exit={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+     >
+       <ConstellationField />
 
+       <motion.div
+         className="loading-content"
+         initial={{ opacity: 0 }}
+         animate={{ opacity: 1 }}
+         transition={{ duration: 0.8 }}
+       >
+         <motion.div
+           className="loading-logo"
+           animate={{
+             rotate: 360,
+           }}
+           transition={{
+             repeat: Infinity,
+             ease: "linear",
+             duration: 18,
+           }}
+         />
+
+         <motion.h1 initial={{ y: 20 }} animate={{ y: 0 }}>
+           Shreyansh
+         </motion.h1>
+
+         <motion.p
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ delay: 0.4 }}
+         >
+           Portfolio
+         </motion.p>
+
+         <motion.div
+           className="loading-line"
+           initial={{ width: 0 }}
+           animate={{ width: 170 }}
+           transition={{ duration: 2 }}
+         />
+       </motion.div>
+     </motion.div>
+   );
+ }
   return (
     <div className="app-shell">
       <ConstellationField />
