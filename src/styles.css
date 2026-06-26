@@ -504,7 +504,7 @@ main {
 
 .skills-stage-copy {
   position: absolute;
-  top: -20%;
+  top: 0;
   left: 0;
   max-width: 20rem;
   z-index: 20;

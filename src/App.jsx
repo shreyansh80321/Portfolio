@@ -394,7 +394,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (!skillsStarted || skillsPhase !== "idle") {
+    if (!skillsStarted) {
       return undefined;
     }
 
@@ -412,7 +412,7 @@ function App() {
       window.clearTimeout(fastTimer);
       window.clearTimeout(revealTimer);
     };
-  }, [skillsStarted, skillsPhase]);
+  }, [skillsStarted]);
 
   const featuredProjects = useMemo(
     () => projects.filter((project) => project.featured),
